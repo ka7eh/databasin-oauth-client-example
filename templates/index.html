@@ -1,0 +1,7 @@
+{% if request.user.is_authenticated %}
+Hello <span id="User">{{ request.user }}</span>!
+<br/>
+<a href="{% url 'logout' %}">Log Out</a>
+{% else %}
+<a href="{% url 'social:begin' 'databasin' %}">Log In</a>
+{% endif %}
